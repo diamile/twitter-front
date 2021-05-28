@@ -18,7 +18,7 @@ const tweet = {
     },
     actions: {
         getTweets({commit}){
-          axios.get('https://localhost:3001/api/tweets',{ withCredentials: true})
+          axios.get('https://www.dakarspectatornews.com:443/api/tweets',{ withCredentials: true})
           .then((response)=>{
               console.log("response",response.data)
               commit('setTweets',response.data);
@@ -28,7 +28,7 @@ const tweet = {
         },
 
         getTweet({commit}){
-          axios.get('https://localhost:3001/api/tweet',{ withCredentials: true})
+          axios.get('https://www.dakarspectatornews.com:443/api/tweet',{ withCredentials: true})
           .then((response)=>{
               console.log("response",response.data)
               commit('setTweets',response.data);
@@ -36,13 +36,13 @@ const tweet = {
             })
         },
         getUserTweets({commit},id){
-          axios.get('https://localhost:3001/api/userTweet/'+id)
+          axios.get('https://www.dakarspectatornews.com:443/api/userTweet/'+id)
           .then((res)=>{commit('getFollow',res.data)})
           .catch((err)=>{console.log('err',err)})
          },
      
         postTweets({commit},data){
-            axios.post('https://localhost:3001/api/tweets',data)
+            axios.post('https://www.dakarspectatornews.com:443/api/tweets',data)
             .then(()=>{
                 commit('setTweetSuccess',true);
                 setTimeout(()=>{
@@ -55,7 +55,7 @@ const tweet = {
 
         deletedUserTweet({commit},id){
           console.log('id',id);
-          axios.delete('https://localhost:3001/api/tweets/'+id)
+          axios.delete('https://www.dakarspectatornews.com:443/api/tweets/'+id)
           .then(()=>{
               //location.reload();
               commit('setTweetSuccess',true);
@@ -65,7 +65,7 @@ const tweet = {
 
       actionUpdateTweet({commit},data){
         console.log("data dans actionUpdateTweet",data)
-        axios.put('https://localhost:3001/api/tweets/update',data)
+        axios.put('https://www.dakarspectatornews.com:443/api/tweets/update',data)
         .then(()=>{
             //location.reload();
             commit('setTweetSuccess',true);

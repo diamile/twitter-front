@@ -23,7 +23,7 @@ const signup = {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
       }
-       axios.post('https://localhost:3001/api/users',data,headers)
+       axios.post('https://www.dakarspectatornews.com:443/api/users',data,headers)
        .then((res)=>{
          console.log('res',res)
          if(res.data){

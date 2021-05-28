@@ -42,7 +42,7 @@ const signin = {
             "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
             "Access-Control-Allow-Origin":"https://localhost:3001"
           }
-         axios.post('https://localhost:3001/api/auth',data,headers,{withCredentials: true})
+         axios.post('/api/auth',data,headers,{withCredentials: true})
          .then((res)=>{
             console.log('res',res.data);
             commit('getUser',res.data);
@@ -57,7 +57,7 @@ const signin = {
 
        currentUser({commit}){
         console.log("ici");
-        axios.get('https://localhost:3001/current/user')
+        axios.get('https://www.dakarspectatornews.com:443/current/user')
         .then((res)=>{
           console.log('ressss',res.data)
           commit('currentUser',res.data)
@@ -67,7 +67,7 @@ const signin = {
         })
        },
        refreshToken({commit,dispatch}){
-        axios.get('https://localhost:3001/token/refresh-token')
+        axios.get('https://www.dakarspectatornews.com:443/token/refresh-token')
         .then((res)=>{
             setTimeout(()=>{
                 dispatch('refreshToken');
